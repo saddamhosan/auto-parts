@@ -15,8 +15,7 @@ const Banner = () => {
        cssEase: "linear",
      };
     return (
-      <div>
-        <h2> Single Item</h2>
+      <div className='p-7'>
         <Slider {...settings}>
           <div>
             <h3>1</h3>
