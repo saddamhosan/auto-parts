@@ -1,7 +1,16 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Navbar = () => {
+  const [user]=useAuthState(auth)
+
+  const handleSignOut = () => {
+    localStorage.removeItem("Token");
+    signOut(auth);
+  };
     return (
       <div class="navbar bg-base-100">
         <div class="navbar-start">
@@ -32,9 +41,21 @@ const Navbar = () => {
               <li>
                 <NavLink to="/blogs">Blogs</NavLink>
               </li>
+              {user && (
+                <li>
+                  <NavLink to="/dashboard">Dashboard</NavLink>
+                </li>
+              )}
               <li>
-                <NavLink to="/login">Login</NavLink>
+                {user?.uid ? (
+                  <button onClick={handleSignOut} className="btn btn-ghost">
+                    Log Out
+                  </button>
+                ) : (
+                  <NavLink to="/login">Login</NavLink>
+                )}
               </li>
+              <li>{user?.uid ? <p>{user.displayName}</p> : ""}</li>
             </ul>
           </div>
           <Link to="/" class="btn btn-ghost normal-case text-xl">
@@ -49,9 +70,21 @@ const Navbar = () => {
             <li>
               <NavLink to="/blogs">Blogs</NavLink>
             </li>
+            {user && (
+              <li>
+                <NavLink to="/dashboard">Dashboard</NavLink>
+              </li>
+            )}
             <li>
-              <NavLink to="/login">Login</NavLink>
+              {user?.uid ? (
+                <button onClick={handleSignOut} className="btn btn-ghost">
+                  Log Out
+                </button>
+              ) : (
+                <NavLink to="/login">Login</NavLink>
+              )}
             </li>
+            <li>{user?.uid ? <p>{user.displayName}</p> : ""}</li>
           </ul>
         </div>
       </div>
