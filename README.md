@@ -1,3 +1,4 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Client side github link on this project [Client side github link](https://github.com/programming-hero-web-course1/manufacturer-website-client-side-saddamhosan).
+Server side github link on this project [Server side github link](https://github.com/programming-hero-web-course1/manufacturer-website-server-side-saddamhosan).
