@@ -14,9 +14,9 @@ const Parts = () => {
   if (error) return "An error has occurred: " + error.message;
 
   return (
-    <div>
-      <h1>Parts</h1>
-      <div className="grid grid-cols-3 gap-6">
+    <div className="mx-10 my-10 font-serif">
+      <h1 className="text-center text-2xl text-blue-600 font-bold">Parts</h1>
+      <div className="md:grid grid-cols-3 gap-6 space-y-8">
           {
           parts.map(part=><Part key={part._id} part={part}/>)
           }
