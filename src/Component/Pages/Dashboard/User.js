@@ -8,7 +8,7 @@ const User = ({ user, index, refetch }) => {
       method: "PUT",
       headers: {
           'content-type':'application/json',
-        // authorization: `Bearer ${localStorage.getItem("Token")}`,
+         authorization: `Bearer ${localStorage.getItem("Token")}`,
       },
     })
       .then((res) => {
@@ -36,24 +36,33 @@ const User = ({ user, index, refetch }) => {
   };
 
   const handleDeleteAdmin=()=>{
-      fetch(`http://localhost:4000/user/${email}`, {
-        method: "delete",
-        headers: {
-          "content-type": "application/json",
-          // authorization: `Bearer ${localStorage.getItem("Token")}`,
-        },
-      }).then(res=>res.json()).then(data=>{
-          if(data.deletedCount){
-              Swal.fire({
-                position: "top-center",
-                icon: "success",
-                title: "successfully delete admin",
-                showConfirmButton: false,
-                timer: 1500,
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You want to delete this admin!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+            fetch(`http://localhost:4000/user/${email}`, {
+              method: "delete",
+              headers: {
+                "content-type": "application/json",
+                authorization: `Bearer ${localStorage.getItem("Token")}`,
+              },
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.deletedCount) {
+                    Swal.fire("Deleted!", "Admin deleted.", "success");
+                  refetch();
+                }
               });
-              refetch();
-          }
-      })
+        }
+      });
+      
   }
   return (
     <tr>

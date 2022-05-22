@@ -74,7 +74,7 @@ const Purchase = () => {
               timer: 1500,
             });
             e.target.reset()
-            navigate("/dashboard");
+            navigate("/dashboard/myOrder");
           }
         });
 

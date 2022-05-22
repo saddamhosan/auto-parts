@@ -23,27 +23,28 @@ const Register = () => {
       useSignInWithGoogle(auth);
 
     const [updateProfile, updating, uError] = useUpdateProfile(auth);
-
-    const onSubmit = async (data) => {
-      await createUserWithEmailAndPassword(data.email, data.password);
-      await updateProfile({ displayName: data.name });
-    };
-
     const [token] = useToken(user || gUser);
 
-    if (loading || gLoading || updating) {
-      return <Loading />;
-    }
+    
 
+     const onSubmit = async (data) => {
+       await createUserWithEmailAndPassword(data.email, data.password);
+       await updateProfile({ displayName: data.name });
+     };
+
+
+     if (loading || gLoading || updating) {
+       return <Loading />;
+     }
+    
     if (token) {
       navigate(from, { replace: true });
     }
 
-    
-
     const handleGoogleSignIn = async () => {
       await signInWithGoogle();
     };
+
     return (
       <div className="md:w-1/2 mx-auto shadow-xl p-10 my-10 rounded-xl font-serif">
         <div>

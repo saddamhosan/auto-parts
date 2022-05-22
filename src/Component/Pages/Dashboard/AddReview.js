@@ -5,6 +5,7 @@ import auth from "../../../firebase.init";
 
 const AddReview = () => {
   const [user] = useAuthState(auth);
+  console.log(user);
   const [rattingError, setRattingError] = useState("");
   const handleAddReview = (e) => {
     e.preventDefault();
