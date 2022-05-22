@@ -40,14 +40,22 @@ const Purchase = () => {
     const handleOrder=(e)=>{
       e.preventDefault()
       setOrderError('')
-      const name=e.target.name.value
+      const userName=e.target.name.value
       const email=e.target.email.value
       const address=e.target.address.value
       const number=e.target.number.value
+      const productName=name
       
-      const order={
-        name,email,address,quantity, number,
-      }
+      
+      const order = {
+        userName,
+        email,
+        address,
+        productName,
+        img,
+        quantity,
+        number,
+      };
       console.log(order);
       fetch("http://localhost:4000/order", {
         method: "post",
