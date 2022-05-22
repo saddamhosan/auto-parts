@@ -24,6 +24,11 @@ const Register = () => {
 
     const [updateProfile, updating, uError] = useUpdateProfile(auth);
 
+    const onSubmit = async (data) => {
+      await createUserWithEmailAndPassword(data.email, data.password);
+      await updateProfile({ displayName: data.name });
+    };
+
     const [token] = useToken(user || gUser);
 
     if (loading || gLoading || updating) {
@@ -34,18 +39,15 @@ const Register = () => {
       navigate(from, { replace: true });
     }
 
-    const onSubmit = async (data) => {
-      await createUserWithEmailAndPassword(data.email, data.password);
-      await updateProfile({ displayName: data.name });
-    };
+    
 
     const handleGoogleSignIn = async () => {
       await signInWithGoogle();
     };
     return (
-      <div className="w-1/2 mx-auto shadow-xl p-10 my-10 rounded-xl">
+      <div className="md:w-1/2 mx-auto shadow-xl p-10 my-10 rounded-xl font-serif">
         <div>
-          <h1 className="text-center text-2xl font-bold text-secondary  ">
+          <h1 className="text-center text-2xl font-bold text-blue-500  ">
             Please Register
           </h1>
 
@@ -151,7 +153,7 @@ const Register = () => {
 
         <p className="text-center mt-4">
           Already You Have an account?{" "}
-          <Link to="/login" className="text-secondary">
+          <Link to="/login" className="text-blue-500">
             Please Login
           </Link>
         </p>

@@ -8,7 +8,7 @@ const OrderRow = ({ order, index, refetch }) => {
   const handleDeleteOrder = (id) => {
     Swal.fire({
       title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      text: "You want to delete this order!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -25,7 +25,7 @@ const OrderRow = ({ order, index, refetch }) => {
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {
-              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              Swal.fire("Deleted!", "Your order has been deleted.", "success");
               refetch()
             }
           });

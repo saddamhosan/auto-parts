@@ -44,9 +44,9 @@ const Login = () => {
        signInWithEmailAndPassword(data.email, data.password);
      };
     return (
-      <div className="w-1/2 mx-auto shadow-xl p-10 my-10 rounded-xl">
+      <div className="md:w-1/2 mx-auto shadow-xl p-10 my-10 rounded-xl font-serif">
         <div>
-          <h1 className="text-center text-2xl font-bold text-secondary  ">
+          <h1 className="text-center text-2xl font-bold text-blue-500  ">
             Please Login
           </h1>
 
@@ -129,15 +129,15 @@ const Login = () => {
         )}
 
         <p className="text-center mt-4">
-          New to doctors portal?{" "}
-          <Link to="/register" className="text-secondary">
+          New to Automobile?{" "}
+          <Link to="/register" className="text-blue-500">
             Create new account
           </Link>
         </p>
         <p className="text-center mt-4">
           Forgat Password?{" "}
           <button
-            className="text-secondary"
+            className="text-blue-500"
             onClick={async () => {
               await sendPasswordResetEmail(email);
               alert("Sent email");
