@@ -11,12 +11,12 @@ const MyOrder = () => {
     isLoading,
     error,
     data: orders,
+    refetch
   } = useQuery(["orders", email], () =>
     fetch(`http://localhost:4000/order/${email}`).then((res) => res.json())
   );
   if (isLoading) return "Loading...";
   if (error) return "An error has occurred: " + error.message;
-  console.log(orders);
   return (
     <div>
       <h1>My Order :{orders?.length}</h1>
@@ -36,7 +36,12 @@ const MyOrder = () => {
           </thead>
           <tbody>
             {orders.map((order, index) => (
-              <OrderRow key={order._id} order={order} index={index} />
+              <OrderRow
+                key={order._id}
+                order={order}
+                index={index}
+                refetch={refetch}
+              />
             ))}
           </tbody>
         </table>

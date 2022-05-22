@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import { useNavigate, useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import auth from '../../../firebase.init';
 
 const Purchase = () => {
@@ -65,9 +66,15 @@ const Purchase = () => {
         .then((res) => res.json())
         .then((data) => {
           if(data.insertedId){
-            alert('Your order successfully added')
+            Swal.fire({
+              position: "top-center",
+              icon: "success",
+              title: "Your work has been saved",
+              showConfirmButton: false,
+              timer: 1500,
+            });
             e.target.reset()
-            navigate('/')
+            navigate("/dashboard");
           }
         });
 
