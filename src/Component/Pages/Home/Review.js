@@ -20,7 +20,7 @@ const Review = () => {
           Reviews
         </h1>
         <div className="md:grid grid-cols-3 gap-6 ">
-          {reviews.map((review) => (
+          {reviews.slice(-3).map((review) => (
             <div
               className="shadow-xl p-3 rounded-xl border text-center"
               key={review._id}

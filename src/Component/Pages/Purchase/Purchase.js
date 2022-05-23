@@ -54,6 +54,7 @@ const Purchase = () => {
         address,
         productName,
         img,
+        price,
         quantity,
         number,
       };

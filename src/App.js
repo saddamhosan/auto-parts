@@ -11,15 +11,14 @@ import MakeAdmin from "./Component/Pages/Dashboard/MakeAdmin";
 import ManageProduct from "./Component/Pages/Dashboard/ManageProduct";
 import MyOrder from "./Component/Pages/Dashboard/MyOrder";
 import MyProfile from "./Component/Pages/Dashboard/MyProfile";
+import Payment from "./Component/Pages/Dashboard/Payment";
 import Home from "./Component/Pages/Home/Home";
 import Purchase from "./Component/Pages/Purchase/Purchase";
 import Footer from "./Component/Shared/Footer";
 import Navbar from "./Component/Shared/Navbar";
 import NotFound from "./Component/Shared/NotFound";
 
-
 function App() {
-  
   return (
     <div>
       <Navbar />
@@ -57,6 +56,7 @@ function App() {
               </RequireAuth>
             }
           />
+          <Route path="payment/:id" element={<Payment />} />
           <Route
             path="addReview"
             element={

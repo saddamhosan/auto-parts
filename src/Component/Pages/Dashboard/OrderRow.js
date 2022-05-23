@@ -45,7 +45,7 @@ const OrderRow = ({ order, index, refetch }) => {
       <td>{productName}</td>
       <td>{quantity}</td>
       <td>
-        <Link to="" className="btn btn-xs bg-cyan-500 border-0">
+        <Link to={`/dashboard/payment/${_id}`} className="btn btn-xs bg-cyan-500 border-0">
           Pay
         </Link>
       </td>
