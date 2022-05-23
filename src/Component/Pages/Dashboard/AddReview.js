@@ -21,7 +21,7 @@ const AddReview = () => {
       description,
       ratting,
     };
-     fetch("http://localhost:4000/review", {
+     fetch("https://pacific-hamlet-76531.herokuapp.com/review", {
        method: "post",
        headers: { "content-type": "application/json" },
        body: JSON.stringify(review),

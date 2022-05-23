@@ -17,7 +17,7 @@ const Purchase = () => {
       error,
       data: part,
     } = useQuery(["part",id], () =>
-      fetch(`http://localhost:4000/part/${id}`).then((res) => res.json())
+      fetch(`https://pacific-hamlet-76531.herokuapp.com/part/${id}`).then((res) => res.json())
     );
     if (isLoading) return "Loading...";
     if (error) return "An error has occurred: " + error.message;
@@ -59,7 +59,7 @@ const Purchase = () => {
         number,
       };
       console.log(order);
-      fetch("http://localhost:4000/order", {
+      fetch("https://pacific-hamlet-76531.herokuapp.com/order", {
         method: "post",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(order),

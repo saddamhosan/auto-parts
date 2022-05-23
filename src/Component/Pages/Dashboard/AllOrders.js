@@ -4,13 +4,13 @@ import Swal from 'sweetalert2';
 const AllOrders = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-      fetch("http://localhost:4000/orders")
+      fetch("https://pacific-hamlet-76531.herokuapp.com/orders")
         .then((res) => res.json())
         .then((data) => setOrders(data));
     }, [orders]);
 
     const handleShippedOrder=(id)=>{
-        fetch(`http://localhost:4000/order/${id}`, {
+        fetch(`https://pacific-hamlet-76531.herokuapp.com/order/${id}`, {
           method: "put",
           headers: { "content-type": "application/json" },
         })

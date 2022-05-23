@@ -9,7 +9,7 @@ const MakeAdmin = () => {
     data: users,
     refetch,
   } = useQuery("users", () =>
-    fetch("http://localhost:4000/users").then((res) => res.json())
+    fetch("https://pacific-hamlet-76531.herokuapp.com/users").then((res) => res.json())
   );
   if (isLoading) return "Loading...";
   if (error) return "An error has occurred: " + error.message;
