@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const OrderRow = ({ order, index, refetch }) => {
-  const { _id, img, productName, quantity } = order;
+  const { _id, img, productName, quantity, paid, transactionId } = order;
 
   const handleDeleteOrder = (id) => {
     Swal.fire({
@@ -44,15 +44,28 @@ const OrderRow = ({ order, index, refetch }) => {
       </td>
       <td>{productName}</td>
       <td>{quantity}</td>
-      <td>
-        <Link to={`/dashboard/payment/${_id}`} className="btn btn-xs bg-cyan-500 border-0">
-          Pay
-        </Link>
+      <td className='text-center'>
+        {!paid && (
+          <Link
+            to={`/dashboard/payment/${_id}`}
+            className="btn btn-sm text-xl bg-cyan-500 border-0"
+          >
+            Pay
+          </Link>
+        )}
+        {paid && (
+          <div className=" text-blue-500 font-bold text-xl ">
+            <p className='text-center'>Paid Transaction Id:</p>
+
+            <p className="text-cyan-500">{transactionId}</p>
+          </div>
+        )}
       </td>
       <td>
         <button
           onClick={() => handleDeleteOrder(_id)}
           className="btn btn-xs bg-red-500 border-0"
+          disabled={paid}
         >
           Delete
         </button>

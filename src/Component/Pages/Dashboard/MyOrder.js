@@ -30,7 +30,7 @@ const MyOrder = () => {
               <th>Image</th>
               <th>Parts Name</th>
               <th>Quantity</th>
-              <th>Pay</th>
+              <th className="text-center">Pay</th>
               <th>Delete</th>
             </tr>
           </thead>
