@@ -22,9 +22,9 @@ const Dashboard = () => {
           </div>
           <Outlet />
         </div>
-        <div className="drawer-side ">
+        <div className="drawer-side w-3/5 md:w-full">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-70 text-base-content bg-slate-100">
+          <ul className="menu p-4 overflow-y-auto text-base-content bg-slate-100">
             {/* <!-- Sidebar content here --> */}
             <li>
               <Link className="text-xl font-bold text-gray-500" to="/dashboard">
