@@ -15,7 +15,7 @@ const MakeAdmin = () => {
   if (error) return "An error has occurred: " + error.message;
   return (
     <div>
-      this is make admin:{users.length}
+      <p className="text-center text-3xl text-blue-500 font-bold">Total user : {users.length}</p>
       <div class="overflow-x-auto">
         <table class="table w-full">
           <thead>

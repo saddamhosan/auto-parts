@@ -54,8 +54,8 @@ const MyProfile = () => {
   };
   const {education,location,phone,linkedIn}=profile
   return (
-    <div className="font-serif flex lg:flex-row-reverse justify-center items-center bg-slate-50">
-      <div className="w-3/5">
+    <div className="font-serif lg:flex lg:flex-row-reverse justify-center items-center bg-slate-50 my-10">
+      <div className="lg:w-3/5 text-center">
         <h1 class="text-3xl font-bold">Name: {name}</h1>
         <p>Email: {email}</p>
         <p>Education: {education || "Not found"}</p>
@@ -64,7 +64,7 @@ const MyProfile = () => {
         <p>Phone: {phone || "Not found"}</p>
       </div>
 
-      <div class="w-2/5">
+      <div class="lg:w-2/5">
         <div class="card-body">
           <h1 className="text-2xl font-bold text-center text-blue-500">
             Update your profile

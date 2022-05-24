@@ -2,6 +2,12 @@ import React from 'react';
 import Slider from 'react-slick/lib/slider';
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import banner1 from '../../../images/banner-1.jpg';
+import banner2 from '../../../images/banner-2.png';
+import banner3 from '../../../images/banner-3.jpg';
+import banner4 from '../../../images/banner-4.jpg';
+import banner5 from '../../../images/banner-5.jpg';
+import banner6 from '../../../images/banner-6.jpg';
 
 const Banner = () => {
      const settings = {
@@ -15,25 +21,25 @@ const Banner = () => {
        cssEase: "linear",
      };
     return (
-      <div className='p-7'>
+      <div className="px-7 h-[70vh]">
         <Slider {...settings}>
-          <div>
-            <h3>1</h3>
+          <div className="h-[70vh]">
+            <img className="w-full h-full" src={banner1} alt="" />
           </div>
-          <div>
-            <h3>2</h3>
+          <div className="h-[70vh]">
+            <img className="w-full h-full" src={banner2} alt="" />
           </div>
-          <div>
-            <h3>3</h3>
+          <div className="h-[70vh]">
+            <img className="w-full h-full" src={banner3} alt="" />
           </div>
-          <div>
-            <h3>4</h3>
+          <div className="h-[70vh]">
+            <img className="w-full h-full" src={banner4} alt="" />
           </div>
-          <div>
-            <h3>5</h3>
+          <div className="h-[70vh]">
+            <img className="w-full h-full" src={banner5} alt="" />
           </div>
-          <div>
-            <h3>6</h3>
+          <div className="h-[70vh]">
+            <img className="w-full h-full" src={banner6} alt="" />
           </div>
         </Slider>
       </div>
