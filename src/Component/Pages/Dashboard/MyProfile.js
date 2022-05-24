@@ -10,7 +10,7 @@ const MyProfile = () => {
   const email = user?.email;
   console.log(email);
   useEffect(() => {
-    fetch(`http://localhost:4000/user/${email}`)
+    fetch(`https://pacific-hamlet-76531.herokuapp.com/user/${email}`)
       .then((res) => res.json())
       .then((data) => setProfile(data));
   }, [email,profile]);
@@ -33,7 +33,7 @@ const MyProfile = () => {
       linkedIn,
     };
     
-    fetch(`http://localhost:4000/user/${email}`, {
+    fetch(`https://pacific-hamlet-76531.herokuapp.com/user/${email}`, {
       method: "put",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(profile),
