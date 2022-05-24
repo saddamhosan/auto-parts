@@ -3,6 +3,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
 import auth from '../../firebase.init';
+import logo from '../../images/logo.ico';
 
 const Navbar = () => {
   const [user]=useAuthState(auth)
@@ -26,7 +27,7 @@ const Navbar = () => {
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                 strokeWidth="2"
+                  strokeWidth="2"
                   d="M4 6h16M4 12h8m-8 6h16"
                 />
               </svg>
@@ -59,7 +60,10 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost normal-case text-xl">
-            daisyUI
+            <div className='flex items-center'>
+              <img className='w-[70px]' src={logo} alt="" />
+              <span>AutoParts</span>
+            </div>
           </Link>
         </div>
         <div className="navbar-end hidden  lg:flex">
