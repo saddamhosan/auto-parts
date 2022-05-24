@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 const ManageProduct = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/parts", {
+    fetch("https://pacific-hamlet-76531.herokuapp.com/parts", {
       method: "get",
       headers: {
         authorization: `Bearer ${localStorage.getItem("Token")}`,
@@ -25,7 +25,7 @@ const ManageProduct = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `http://localhost:4000/part/${id}`;
+        const url = `https://pacific-hamlet-76531.herokuapp.com/part/${id}`;
         fetch(url, {
           method: "delete",
           headers: {

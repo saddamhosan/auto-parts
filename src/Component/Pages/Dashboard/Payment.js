@@ -13,15 +13,17 @@ const stripePromise = loadStripe(
 
 const Payment = () => {
     const { id } = useParams();
-    const { data:part, isLoading } = useQuery(["payment", id], () =>
-      fetch(`http://localhost:4000/orders/${id}`).then(
-        (res) => res.json()
-      )
+    const { data: part, isLoading } = useQuery(["payment", id], () =>
+      fetch(`https://pacific-hamlet-76531.herokuapp.com/orders/${id}`, {
+        method: "get",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("Token")}`,
+        },
+      }).then((res) => res.json())
     );
     if (isLoading) {
       return <Loading />;
     }
-    console.log(part);
     const {userName,productName,quantity,price}=part
     return (
       <div className=" w-3/5 mx-auto">

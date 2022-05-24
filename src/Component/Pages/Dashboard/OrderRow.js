@@ -16,17 +16,19 @@ const OrderRow = ({ order, index, refetch }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `http://localhost:4000/order/${id}`;
-        console.log(url);
+        const url = `https://pacific-hamlet-76531.herokuapp.com/order/${id}`;
         fetch(url, {
           method: "delete",
-          headers: { "content-type": "application/json" },
+          headers: {
+            "content-type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("Token")}`,
+          },
         })
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {
               Swal.fire("Deleted!", "Your order has been deleted.", "success");
-              refetch()
+              refetch();
             }
           });
       }

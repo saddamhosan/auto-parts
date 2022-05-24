@@ -9,7 +9,7 @@ const MyProfile = () => {
   const name = user?.displayName;
   const email = user?.email;
   useEffect(() => {
-    fetch(`http://localhost:4000/user/${email}`, {
+    fetch(`https://pacific-hamlet-76531.herokuapp.com/user/${email}`, {
       method: "get",
       headers: {
         authorization: `Bearer ${localStorage.getItem("Token")}`,
@@ -37,7 +37,7 @@ const MyProfile = () => {
       linkedIn,
     };
     
-    fetch(`http://localhost:4000/user/${email}`, {
+    fetch(`https://pacific-hamlet-76531.herokuapp.com/user/${email}`, {
       method: "put",
       headers: {
         "content-type": "application/json",

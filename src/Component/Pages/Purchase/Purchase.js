@@ -17,7 +17,7 @@ const Purchase = () => {
       error,
       data: part,
     } = useQuery(["part", id], () =>
-      fetch(`http://localhost:4000/part/${id}`, {
+      fetch(`https://pacific-hamlet-76531.herokuapp.com/part/${id}`, {
         method: "get",
         headers: {
           authorization: `Bearer ${localStorage.getItem("Token")}`,
@@ -33,10 +33,10 @@ const Purchase = () => {
       setOrderError('')
       const quantity = e.target.value;
       console.log(quantity);
-      if (quantity < minOrder) {
+      if (quantity < +minOrder) {
         return setOrderError(`please order minimum ${minOrder} pieces.`);
       }
-      if (quantity > available) {
+      if (quantity > +available) {
         return setOrderError(`please order maximum ${available} pieces.`);
       }
       setQuantity(quantity)
@@ -63,7 +63,7 @@ const Purchase = () => {
         quantity,
         number,
       };
-      fetch("http://localhost:4000/order", {
+      fetch("https://pacific-hamlet-76531.herokuapp.com/order", {
         method: "post",
         headers: {
           "content-type": "application/json",
@@ -140,7 +140,11 @@ const Purchase = () => {
                     <label class="label">
                       <span class="label-text">Address</span>
                     </label>
-                    <textarea name="address" class="input input-bordered" />
+                    <textarea
+                      name="address"
+                      required
+                      class="input input-bordered"
+                    />
                   </div>
 
                   <div class="form-control">
@@ -150,6 +154,7 @@ const Purchase = () => {
                     <input
                       type="number"
                       name="quantity"
+                      required
                       class="input input-bordered"
                       onChange={handleQuantity}
                     />
@@ -168,7 +173,9 @@ const Purchase = () => {
                   </div>
 
                   <div class="form-control mt-6">
-                    <button disabled={orderError} class="btn btn-primary">Order Now</button>
+                    <button disabled={orderError} class="btn btn-primary">
+                      Order Now
+                    </button>
                   </div>
                 </form>
               </div>

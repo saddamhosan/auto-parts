@@ -11,9 +11,15 @@ const MyOrder = () => {
     isLoading,
     error,
     data: orders,
-    refetch
+    refetch,
   } = useQuery(["orders", email], () =>
-    fetch(`http://localhost:4000/order/${email}`).then((res) => res.json())
+    fetch(`https://pacific-hamlet-76531.herokuapp.com/order/${email}`, {
+      method: "get",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("Token")}`,
+      },
+    }).then((res) => res.json())
   );
   if (isLoading) return "Loading...";
   if (error) return "An error has occurred: " + error.message;

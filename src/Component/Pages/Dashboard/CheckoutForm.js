@@ -13,10 +13,12 @@ const CheckoutForm = ({part}) => {
   const { _id, price, email, userName } = part;
 
   useEffect(() => {
-    // Create PaymentIntent as soon as the page loads
-    fetch("http://localhost:4000/create-payment-intent", {
+    fetch("https://pacific-hamlet-76531.herokuapp.com/create-payment-intent", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("Token")}`,
+      },
       body: JSON.stringify({ price }),
     })
       .then((res) => res.json())
@@ -69,9 +71,12 @@ const CheckoutForm = ({part}) => {
         order: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`http://localhost:4000/orders/${_id}`, {
+      fetch(`https://pacific-hamlet-76531.herokuapp.com/orders/${_id}`, {
         method: "put",
-        headers: { "content-type": "application/json" },
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("Token")}`,
+        },
         body: JSON.stringify(payment),
       })
         .then((res) => res.json())
