@@ -2,6 +2,7 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import auth from "../../../firebase.init";
+import Loading from "../../Shared/Loading";
 import OrderRow from "./OrderRow";
 
 const MyOrder = () => {
@@ -21,14 +22,14 @@ const MyOrder = () => {
       },
     }).then((res) => res.json())
   );
-  if (isLoading) return "Loading...";
+  if (isLoading) return <Loading/>;
   if (error) return "An error has occurred: " + error.message;
   return (
     <div>
-      <h1>My Order :{orders?.length}</h1>
+      <h1 className="text-2xl text-center text-blue-500 font-bold">My All Order :{orders?.length}</h1>
 
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           {/* <!-- head --> */}
           <thead>
             <tr>

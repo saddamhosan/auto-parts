@@ -38,8 +38,8 @@ const OrderRow = ({ order, index, refetch }) => {
     <tr>
       <th>{index + 1}</th>
       <td>
-        <div class="avatar">
-          <div class="w-20 rounded">
+        <div className="avatar">
+          <div className="w-20 rounded">
             <img src={img} alt="" />
           </div>
         </div>

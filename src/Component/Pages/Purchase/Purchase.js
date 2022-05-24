@@ -4,6 +4,7 @@ import { useQuery } from 'react-query';
 import { useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading';
 
 const Purchase = () => {
   const navigate=useNavigate()
@@ -24,7 +25,7 @@ const Purchase = () => {
         },
       }).then((res) => res.json())
     );
-    if (isLoading) return "Loading...";
+    if (isLoading) return <Loading/>;
     if (error) return "An error has occurred: " + error.message;
 
     const { name, img, description, minOrder, available, price } = part;
@@ -90,8 +91,8 @@ const Purchase = () => {
     }
     return (
       <div>
-        <div class="hero min-h-screen bg-base-200">
-          <div class="hero-content flex-col lg:flex-row-reverse">
+        <div className="hero min-h-screen bg-base-200">
+          <div className="hero-content flex-col lg:flex-row-reverse">
             <div className="shadow-xl rounded-2xl">
               <div className="flex justify-center">
                 <img className="max-h-[300px]" src={img} alt="" />
@@ -105,12 +106,12 @@ const Purchase = () => {
               </div>
             </div>
 
-            <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-              <div class="card-body">
+            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+              <div className="card-body">
                 <form onSubmit={handleOrder}>
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="label-text">Name</span>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Name</span>
                     </label>
                     <input
                       type="text"
@@ -118,13 +119,13 @@ const Purchase = () => {
                       name="name"
                       readOnly
                       disabled
-                      class="input input-bordered"
+                      className="input input-bordered"
                     />
                   </div>
 
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="label-text">Email</span>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Email</span>
                     </label>
                     <input
                       type="email"
@@ -132,48 +133,48 @@ const Purchase = () => {
                       name="email"
                       readOnly
                       disabled
-                      class="input input-bordered"
+                      className="input input-bordered"
                     />
                   </div>
 
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="label-text">Address</span>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Address</span>
                     </label>
                     <textarea
                       name="address"
                       required
-                      class="input input-bordered"
+                      className="input input-bordered"
                     />
                   </div>
 
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="label-text">Order Quantity</span>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Order Quantity</span>
                     </label>
                     <input
                       type="number"
                       name="quantity"
                       required
-                      class="input input-bordered"
+                      className="input input-bordered"
                       onChange={handleQuantity}
                     />
                   </div>
                   {orderError && <p className="text-red-600">{orderError}</p>}
 
-                  <div class="form-control">
-                    <label class="label">
-                      <span class="label-text">Phone Number</span>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Phone Number</span>
                     </label>
                     <input
                       type="number"
                       name="number"
-                      class="input input-bordered"
+                      className="input input-bordered"
                     />
                   </div>
 
-                  <div class="form-control mt-6">
-                    <button disabled={orderError} class="btn btn-primary">
+                  <div className="form-control mt-6">
+                    <button disabled={orderError} className="btn btn-primary">
                       Order Now
                     </button>
                   </div>

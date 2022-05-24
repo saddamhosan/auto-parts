@@ -49,64 +49,64 @@ const AddProduct = () => {
         <h1 className="text-center text-3xl font-bold text-blue-500">
           Add A New product
         </h1>
-        <div class="card w-1/2 mx-auto shadow-2xl bg-base-100">
-          <div class="card-body">
+        <div className="card w-1/2 mx-auto shadow-2xl bg-base-100">
+          <div className="card-body">
             <form onSubmit={handleAddProduct}>
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Name</span>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
                 </label>
-                <input type="text" name="name" class="input input-bordered" />
+                <input type="text" name="name" className="input input-bordered" />
               </div>
 
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Image URL</span>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Image URL</span>
                 </label>
-                <input type="text" name="img" class="input input-bordered" />
+                <input type="text" name="img" className="input input-bordered" />
               </div>
 
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Description</span>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Description</span>
                 </label>
-                <textarea name="description" class="input input-bordered" />
+                <textarea name="description" className="input input-bordered" />
               </div>
 
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Minimum Order</span>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Minimum Order</span>
                 </label>
                 <input
                   type="number"
                   name="minOrder"
-                  class="input input-bordered"
+                  className="input input-bordered"
                 />
               </div>
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">available Quantity</span>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">available Quantity</span>
                 </label>
                 <input
                   type="number"
                   name="available"
-                  class="input input-bordered"
+                  className="input input-bordered"
                 />
               </div>
 
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Price</span>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Price</span>
                 </label>
                 <input
                   type="number"
                   name="price"
-                  class="input input-bordered"
+                  className="input input-bordered"
                 />
               </div>
 
-              <div class="form-control mt-6">
-                <button class="btn btn-primary">Add Product</button>
+              <div className="form-control mt-6">
+                <button className="btn btn-primary">Add Product</button>
               </div>
             </form>
           </div>

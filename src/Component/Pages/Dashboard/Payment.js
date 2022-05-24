@@ -27,18 +27,18 @@ const Payment = () => {
     const {userName,productName,quantity,price}=part
     return (
       <div className=" w-3/5 mx-auto">
-        <div class="card bg-base-100 shadow-xl">
-          <div class="card-body">
+        <div className="card bg-base-100 shadow-xl">
+          <div className="card-body">
             <p className="font-bold text-blue-500">Hello,{userName}</p>
-            <h2 class="card-title">Please pay for {productName}</h2>
+            <h2 className="card-title">Please pay for {productName}</h2>
             <p>
               Your Order {quantity} pieces, par parts price {price}
             </p>
             <p>Please Pay : ${quantity * price}</p>
           </div>
         </div>
-        <div class="card bg-base-100 shadow-xl my-12">
-          <div class="card-body">
+        <div className="card bg-base-100 shadow-xl my-12">
+          <div className="card-body">
             <Elements stripe={stripePromise}>
               <CheckoutForm part={part} />
             </Elements>

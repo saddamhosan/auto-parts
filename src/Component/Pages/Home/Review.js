@@ -2,6 +2,7 @@ import React from 'react';
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { useQuery } from 'react-query';
 import Rating from "react-rating";
+import Loading from '../../Shared/Loading';
 
 const Review = () => {
     const {
@@ -11,7 +12,7 @@ const Review = () => {
     } = useQuery("reviews", () =>
       fetch("https://pacific-hamlet-76531.herokuapp.com/review").then((res) => res.json())
     );
-    if (isLoading) return "Loading...";
+    if (isLoading) return <Loading/>;
     if (error) return "An error has occurred: " + error.message;
     
     return (

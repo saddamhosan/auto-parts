@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
+import Loading from "../../Shared/Loading";
 import Part from "./Part";
 
 const Parts = () => {
@@ -10,7 +11,7 @@ const Parts = () => {
   } = useQuery("parts", () =>
     fetch("https://pacific-hamlet-76531.herokuapp.com/parts").then((res) => res.json())
   );
-  if (isLoading) return "Loading...";
+  if (isLoading) return <Loading/>;
   if (error) return "An error has occurred: " + error.message;
 
   return (

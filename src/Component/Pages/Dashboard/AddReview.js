@@ -50,9 +50,9 @@ const AddReview = () => {
         Add a Review
       </h1>
       <form onSubmit={handleAddReview}>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Name</span>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Name</span>
           </label>
           <input
             type="text"
@@ -60,27 +60,27 @@ const AddReview = () => {
             name="name"
             readOnly
             disabled
-            class="input input-bordered"
+            className="input input-bordered"
           />
         </div>
 
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Description</span>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Description</span>
           </label>
-          <textarea name="description" class="input input-bordered" />
+          <textarea name="description" className="input input-bordered" />
         </div>
 
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Ratting</span>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Ratting</span>
           </label>
-          <input type="number" name="ratting" class="input input-bordered" />
+          <input type="number" name="ratting" className="input input-bordered" />
         </div>
         {rattingError && <p className="text-red-500">{rattingError}</p>}
 
-        <div class="form-control mt-6">
-          <button class="btn btn-primary">Add Review</button>
+        <div className="form-control mt-6">
+          <button className="btn btn-primary">Add Review</button>
         </div>
       </form>
     </div>

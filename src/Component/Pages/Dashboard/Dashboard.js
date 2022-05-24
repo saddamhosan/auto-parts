@@ -10,21 +10,21 @@ const Dashboard = () => {
   const [admin] = useAdmin(user);
   return (
     <div>
-      <div class="drawer drawer-mobile">
-        <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content ">
+      <div className="drawer drawer-mobile">
+        <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+        <div className="drawer-content ">
           {/* <!-- Page content here --> */}
           <div className="flex justify-between px-6">
             <h1 className="text-2xl text-blue-500 font-bold">Dashboard</h1>
-            <label for="my-drawer-2" class=" drawer-button lg:hidden text-2xl">
+            <label htmlFor="my-drawer-2" className=" drawer-button lg:hidden text-2xl">
               <GiHamburgerMenu />
             </label>
           </div>
           <Outlet />
         </div>
-        <div class="drawer-side ">
-          <label for="my-drawer-2" class="drawer-overlay"></label>
-          <ul class="menu p-4 overflow-y-auto w-70 text-base-content bg-slate-100">
+        <div className="drawer-side ">
+          <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+          <ul className="menu p-4 overflow-y-auto w-70 text-base-content bg-slate-100">
             {/* <!-- Sidebar content here --> */}
             <li>
               <Link className="text-xl font-bold text-gray-500" to="/dashboard">

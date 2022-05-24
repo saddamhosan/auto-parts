@@ -63,7 +63,7 @@ const MyProfile = () => {
   return (
     <div className="font-serif lg:flex lg:flex-row-reverse justify-center items-center bg-slate-50 my-10">
       <div className="lg:w-3/5 text-center">
-        <h1 class="text-3xl font-bold">Name: {name}</h1>
+        <h1 className="text-3xl font-bold">Name: {name}</h1>
         <p>Email: {email}</p>
         <p>Education: {education || "Not found"}</p>
         <p>Location: {location || "Not found"}</p>
@@ -71,15 +71,15 @@ const MyProfile = () => {
         <p>Phone: {phone || "Not found"}</p>
       </div>
 
-      <div class="lg:w-2/5">
-        <div class="card-body">
+      <div className="lg:w-2/5">
+        <div className="card-body">
           <h1 className="text-2xl font-bold text-center text-blue-500">
             Update your profile
           </h1>
           <form onSubmit={handleUpdateProfile}>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Name</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Name</span>
               </label>
               <input
                 type="text"
@@ -87,12 +87,12 @@ const MyProfile = () => {
                 value={name}
                 readOnly
                 disabled
-                class="input input-bordered"
+                className="input input-bordered"
               />
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Email</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Email</span>
               </label>
               <input
                 type="email"
@@ -100,56 +100,56 @@ const MyProfile = () => {
                 value={email}
                 readOnly
                 disabled
-                class="input input-bordered"
+                className="input input-bordered"
               />
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Education</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Education</span>
               </label>
               <input
                 type="text"
                 name="education"
-                class="input input-bordered"
+                className="input input-bordered"
                 required
               />
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Location</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Location</span>
               </label>
               <input
                 type="text"
                 required
                 name="location"
-                class="input input-bordered"
+                className="input input-bordered"
               />
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">LinkedIn</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">LinkedIn</span>
               </label>
               <input
                 type="text"
                 required
                 name="linkedIn"
-                class="input input-bordered"
+                className="input input-bordered"
               />
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Phone</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Phone</span>
               </label>
               <input
                 type="text"
                 required
                 name="phone"
-                class="input input-bordered"
+                className="input input-bordered"
               />
             </div>
 
-            <div class="form-control mt-6">
-              <button class="btn btn-primary">Update profile</button>
+            <div className="form-control mt-6">
+              <button className="btn btn-primary">Update profile</button>
             </div>
           </form>
         </div>
