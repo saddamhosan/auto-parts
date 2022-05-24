@@ -8,9 +8,13 @@ const MyProfile = () => {
   const [user] = useAuthState(auth);
   const name = user?.displayName;
   const email = user?.email;
-  console.log(email);
   useEffect(() => {
-    fetch(`https://pacific-hamlet-76531.herokuapp.com/user/${email}`)
+    fetch(`http://localhost:4000/user/${email}`, {
+      method: "get",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("Token")}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => setProfile(data));
   }, [email,profile]);
@@ -33,9 +37,12 @@ const MyProfile = () => {
       linkedIn,
     };
     
-    fetch(`https://pacific-hamlet-76531.herokuapp.com/user/${email}`, {
+    fetch(`http://localhost:4000/user/${email}`, {
       method: "put",
-      headers: { "content-type": "application/json" },
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("Token")}`,
+      },
       body: JSON.stringify(profile),
     })
       .then((res) => res.json())

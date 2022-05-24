@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 const User = ({ user, index, refetch }) => {
   const { email, role } = user;
   const handleMakeAdmin = () => {
-    fetch(`https://pacific-hamlet-76531.herokuapp.com/user/admin/${email}`, {
+    fetch(`http://localhost:4000/user/admin/${email}`, {
       method: "PUT",
       headers: {
           'content-type':'application/json',
@@ -46,7 +46,7 @@ const User = ({ user, index, refetch }) => {
         confirmButtonText: "Yes, delete it!",
       }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`https://pacific-hamlet-76531.herokuapp.com/user/${email}`, {
+            fetch(`http://localhost:4000/user/${email}`, {
               method: "delete",
               headers: {
                 "content-type": "application/json",

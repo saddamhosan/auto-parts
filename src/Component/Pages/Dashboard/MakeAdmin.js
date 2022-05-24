@@ -9,7 +9,12 @@ const MakeAdmin = () => {
     data: users,
     refetch,
   } = useQuery("users", () =>
-    fetch("https://pacific-hamlet-76531.herokuapp.com/users").then((res) => res.json())
+    fetch("http://localhost:4000/users", {
+      method: "get",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("Token")}`,
+      },
+    }).then((res) => res.json())
   );
   if (isLoading) return "Loading...";
   if (error) return "An error has occurred: " + error.message;
@@ -27,7 +32,7 @@ const MakeAdmin = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user, index) => (
+            {users?.map((user, index) => (
               <User
                 key={user._id}
                 user={user}

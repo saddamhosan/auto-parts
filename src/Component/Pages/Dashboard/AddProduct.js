@@ -21,9 +21,12 @@ const AddProduct = () => {
           price
         };
         console.log(product);
-        fetch("https://pacific-hamlet-76531.herokuapp.com/part", {
+        fetch("http://localhost:4000/part", {
           method: "post",
-          headers: { "content-type": "application/json" },
+          headers: {
+            "content-type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("Token")}`,
+          },
           body: JSON.stringify(product),
         })
           .then((res) => res.json())

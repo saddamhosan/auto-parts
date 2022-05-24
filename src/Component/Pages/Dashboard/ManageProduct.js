@@ -4,7 +4,12 @@ import Swal from "sweetalert2";
 const ManageProduct = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://pacific-hamlet-76531.herokuapp.com/parts")
+    fetch("http://localhost:4000/parts", {
+      method: "get",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("Token")}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [products]);
@@ -20,16 +25,18 @@ const ManageProduct = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `https://pacific-hamlet-76531.herokuapp.com/part/${id}`;
+        const url = `http://localhost:4000/part/${id}`;
         fetch(url, {
           method: "delete",
-          headers: { "content-type": "application/json" },
+          headers: {
+            "content-type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("Token")}`,
+          },
         })
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {
               Swal.fire("Deleted!", "Product has been deleted.", "success");
-              
             }
           });
       }

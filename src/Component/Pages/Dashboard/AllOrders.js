@@ -4,27 +4,35 @@ import Swal from 'sweetalert2';
 const AllOrders = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-      fetch("https://pacific-hamlet-76531.herokuapp.com/orders")
+      fetch("http://localhost:4000/orders",{
+      method: "get",
+      headers: {
+         authorization: `Bearer ${localStorage.getItem("Token")}`,
+         },
+    })
         .then((res) => res.json())
         .then((data) => setOrders(data));
     }, [orders]);
 
     const handleShippedOrder=(id)=>{
-        fetch(`https://pacific-hamlet-76531.herokuapp.com/order/${id}`, {
+        fetch(`http://localhost:4000/order/${id}`, {
           method: "put",
-          headers: { "content-type": "application/json" },
+          headers: {
+            "content-type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("Token")}`,
+          },
         })
           .then((res) => res.json())
           .then((data) => {
-           if(data.modifiedCount){
-               Swal.fire({
-                 position: "top-center",
-                 icon: "success",
-                 title: "Payment Confirm Order is shipped",
-                 showConfirmButton: false,
-                 timer: 1500,
-               });
-           }
+            if (data.modifiedCount) {
+              Swal.fire({
+                position: "top-center",
+                icon: "success",
+                title: "Payment Confirm Order is shipped",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            }
           });
     }
     return (

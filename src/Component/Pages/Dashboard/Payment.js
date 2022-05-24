@@ -14,7 +14,7 @@ const stripePromise = loadStripe(
 const Payment = () => {
     const { id } = useParams();
     const { data:part, isLoading } = useQuery(["payment", id], () =>
-      fetch(`https://pacific-hamlet-76531.herokuapp.com/orders/${id}`).then(
+      fetch(`http://localhost:4000/orders/${id}`).then(
         (res) => res.json()
       )
     );

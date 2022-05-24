@@ -16,8 +16,13 @@ const Purchase = () => {
       isLoading,
       error,
       data: part,
-    } = useQuery(["part",id], () =>
-      fetch(`https://pacific-hamlet-76531.herokuapp.com/part/${id}`).then((res) => res.json())
+    } = useQuery(["part", id], () =>
+      fetch(`http://localhost:4000/part/${id}`, {
+        method: "get",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("Token")}`,
+        },
+      }).then((res) => res.json())
     );
     if (isLoading) return "Loading...";
     if (error) return "An error has occurred: " + error.message;
@@ -58,15 +63,17 @@ const Purchase = () => {
         quantity,
         number,
       };
-      console.log(order);
-      fetch("https://pacific-hamlet-76531.herokuapp.com/order", {
+      fetch("http://localhost:4000/order", {
         method: "post",
-        headers: { "content-type": "application/json" },
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("Token")}`,
+        },
         body: JSON.stringify(order),
       })
         .then((res) => res.json())
         .then((data) => {
-          if(data.insertedId){
+          if (data.insertedId) {
             Swal.fire({
               position: "top-center",
               icon: "success",
@@ -74,7 +81,7 @@ const Purchase = () => {
               showConfirmButton: false,
               timer: 1500,
             });
-            e.target.reset()
+            e.target.reset();
             navigate("/dashboard/myOrder");
           }
         });

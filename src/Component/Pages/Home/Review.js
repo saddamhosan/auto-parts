@@ -9,7 +9,7 @@ const Review = () => {
       error,
       data: reviews,
     } = useQuery("reviews", () =>
-      fetch("https://pacific-hamlet-76531.herokuapp.com/review").then((res) => res.json())
+      fetch("http://localhost:4000/review").then((res) => res.json())
     );
     if (isLoading) return "Loading...";
     if (error) return "An error has occurred: " + error.message;

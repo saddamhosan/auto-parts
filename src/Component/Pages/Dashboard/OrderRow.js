@@ -16,7 +16,7 @@ const OrderRow = ({ order, index, refetch }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `https://pacific-hamlet-76531.herokuapp.com/order/${id}`;
+        const url = `http://localhost:4000/order/${id}`;
         console.log(url);
         fetch(url, {
           method: "delete",
