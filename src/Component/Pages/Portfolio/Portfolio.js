@@ -6,12 +6,12 @@ const Portfolio = () => {
       <div>
         <div class=" bg-base-200 min-h-[80vh]">
           <div class=" md:flex lg:flex-row-reverse">
-            <div class="avatar md:w-1/2 min-h-[80vh] flex justify-center items-center">
+            <div class="avatar md:w-1/2 flex justify-center items-center">
               <div class="w-60 rounded-full">
                 <img src={me} alt="" />
               </div>
             </div>
-            <div className="flex justify-center items-center md:w-1/2 px-10 min-h-[80vh]">
+            <div className="flex justify-center items-center md:w-1/2 px-10 mt-10">
               <div>
                 <h1 class="text-3xl font-bold">Saddam Hossain</h1>
                 <p className="text-2xl font-bold py-1">Web Developer</p>

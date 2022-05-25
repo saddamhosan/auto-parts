@@ -16,7 +16,10 @@ const Dashboard = () => {
           {/* <!-- Page content here --> */}
           <div className="flex justify-between px-6">
             <h1 className="text-2xl text-blue-500 font-bold">Dashboard</h1>
-            <label htmlFor="my-drawer-2" className=" drawer-button lg:hidden text-2xl">
+            <label
+              htmlFor="my-drawer-2"
+              className=" drawer-button lg:hidden text-2xl"
+            >
               <GiHamburgerMenu />
             </label>
           </div>
@@ -27,25 +30,19 @@ const Dashboard = () => {
           <ul className="menu p-4 overflow-y-auto text-base-content bg-slate-100">
             {/* <!-- Sidebar content here --> */}
             <li>
-              <Link className="text-xl font-bold text-gray-500" to="/dashboard">
+              <Link className="text-xl font-semibold" to="/dashboard">
                 My Profile
               </Link>
             </li>
             {!admin && (
               <>
                 <li>
-                  <NavLink
-                    className="text-xl font-bold text-gray-500"
-                    to="myOrder"
-                  >
+                  <NavLink className="text-xl font-semibold" to="myOrder">
                     My Order
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink
-                    className="text-xl font-bold text-gray-500"
-                    to="addReview"
-                  >
+                  <NavLink className="text-xl font-semibold" to="addReview">
                     Add Review
                   </NavLink>
                 </li>
@@ -55,34 +52,22 @@ const Dashboard = () => {
             {admin && (
               <>
                 <li>
-                  <NavLink
-                    className="text-xl font-bold text-gray-500"
-                    to="allOrders"
-                  >
+                  <NavLink className="text-xl font-semibold" to="allOrders">
                     Manage All Orders
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink
-                    className="text-xl font-bold text-gray-500"
-                    to="addProduct"
-                  >
+                  <NavLink className="text-xl font-semibold" to="addProduct">
                     Add A Product
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink
-                    className="text-xl font-bold text-gray-500"
-                    to="manageProduct"
-                  >
+                  <NavLink className="text-xl font-semibold" to="manageProduct">
                     Manage Product
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink
-                    className="text-xl font-bold text-gray-500"
-                    to="makeAdmin"
-                  >
+                  <NavLink className="text-xl font-semibold" to="makeAdmin">
                     Make Admin
                   </NavLink>
                 </li>

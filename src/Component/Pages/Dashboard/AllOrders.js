@@ -37,7 +37,7 @@ const AllOrders = () => {
     }
     return (
       <div>
-        this is all orders
+        <h1 className='text-3xl font-bold text-center text-blue-500'>All Orders</h1>
         <div className="overflow-x-auto">
           <table className="table w-full">
             <thead>

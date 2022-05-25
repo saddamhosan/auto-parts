@@ -22,7 +22,7 @@ import NotFound from "./Component/Shared/NotFound";
 
 function App() {
   return (
-    <div>
+    <div className="font-serif">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
