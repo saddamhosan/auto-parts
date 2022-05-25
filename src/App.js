@@ -3,6 +3,7 @@ import Login from "./Component/Pages/Auth/Login";
 import Register from "./Component/Pages/Auth/Register";
 import RequireAdmin from "./Component/Pages/Auth/RequireAdmin";
 import RequireAuth from "./Component/Pages/Auth/RequireAuth";
+import Blogs from './Component/Pages/Blogs/Blogs';
 import AddProduct from "./Component/Pages/Dashboard/AddProduct";
 import AddReview from "./Component/Pages/Dashboard/AddReview";
 import AllOrders from "./Component/Pages/Dashboard/AllOrders";
@@ -13,6 +14,7 @@ import MyOrder from "./Component/Pages/Dashboard/MyOrder";
 import MyProfile from "./Component/Pages/Dashboard/MyProfile";
 import Payment from "./Component/Pages/Dashboard/Payment";
 import Home from "./Component/Pages/Home/Home";
+import Portfolio from "./Component/Pages/Portfolio/Portfolio";
 import Purchase from "./Component/Pages/Purchase/Purchase";
 import Footer from "./Component/Shared/Footer";
 import Navbar from "./Component/Shared/Navbar";
@@ -24,6 +26,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="blogs" element={<Blogs />} />
+        <Route path="portfolio" element={<Portfolio />} />
         <Route
           path="purchase/:id"
           element={

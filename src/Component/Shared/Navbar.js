@@ -13,8 +13,8 @@ const Navbar = () => {
     signOut(auth);
   };
     return (
-      <div className="navbar bg-base-100">
-        <div className="navbar-start">
+      <div className="navbar bg-slate-100">
+        <div className="navbar-start ">
           <div className="dropdown">
             <label tabIndex="0" className="btn btn-ghost lg:hidden">
               <svg
@@ -40,6 +40,9 @@ const Navbar = () => {
                 <NavLink to="/">Home</NavLink>
               </li>
               <li>
+                <NavLink to="/portfolio">Portfolio</NavLink>
+              </li>
+              <li>
                 <NavLink to="/blogs">Blogs</NavLink>
               </li>
               {user && (
@@ -49,46 +52,83 @@ const Navbar = () => {
               )}
               <li>
                 {user?.uid ? (
-                  <button onClick={handleSignOut} className="btn btn-ghost">
-                    Log Out
-                  </button>
+                  <>
+                    <button onClick={handleSignOut} className="btn btn-ghost">
+                      Log Out
+                    </button>
+                    <span className="text-white bg-orange-500 px-3 py-1 font-mono rounded-full font-bold  ml-4">
+                      {user.displayName}
+                    </span>
+                  </>
                 ) : (
                   <NavLink to="/login">Login</NavLink>
                 )}
               </li>
-              <li>{user?.uid ? <p>{user.displayName}</p> : ""}</li>
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost normal-case text-xl">
-            <div className='flex items-center'>
-              <img className='w-[70px]' src={logo} alt="" />
+            <div className="flex items-center">
+              <img className="w-[70px]" src={logo} alt="" />
               <span>AutoParts</span>
             </div>
           </Link>
         </div>
         <div className="navbar-end hidden  lg:flex">
-          <ul className="menu menu-horizontal p-0 space-x-5">
+          <ul className="menu menu-horizontal p-0 ">
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink
+                className="btn btn-ghost btn-md font-bold text-md"
+                to="/"
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/blogs">Blogs</NavLink>
+              <NavLink
+                className="btn btn-ghost btn-md font-bold text-md"
+                to="/portfolio"
+              >
+                Portfolio
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="btn btn-ghost btn-md font-bold text-md"
+                to="/blogs"
+              >
+                Blogs
+              </NavLink>
             </li>
             {user && (
               <li>
-                <NavLink to="/dashboard">Dashboard</NavLink>
+                <NavLink
+                  className="btn btn-ghost btn-md font-bold text-md"
+                  to="/dashboard"
+                >
+                  Dashboard
+                </NavLink>
               </li>
             )}
-            <li>
+            <li className="flex-nowrap">
               {user?.uid ? (
-                <button onClick={handleSignOut} className="btn btn-ghost">
+                <span
+                  onClick={handleSignOut}
+                  className="btn btn-ghost btn-md font-bold text-md"
+                >
                   Log Out
-                </button>
+                  <span className="text-gray-500 font-serif font-bold">
+                    {user.displayName.split(" ")[0]}
+                  </span>
+                </span>
               ) : (
-                <NavLink to="/login">Login</NavLink>
+                <NavLink
+                  className="btn btn-ghost btn-md font-bold text-md"
+                  to="/login"
+                >
+                  Login
+                </NavLink>
               )}
             </li>
-            <li>{user?.uid ? <p>{user.displayName}</p> : ""}</li>
           </ul>
         </div>
       </div>

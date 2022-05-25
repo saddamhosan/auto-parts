@@ -16,7 +16,7 @@ const Review = () => {
     if (error) return "An error has occurred: " + error.message;
     
     return (
-      <div className="m-10">
+      <div className="mx-10 my-20">
         <h1 className="text-center text-3xl font-bold my-4 text-blue-500">
           Reviews
         </h1>
