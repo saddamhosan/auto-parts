@@ -45,7 +45,7 @@ const AddReview = () => {
 
   };
   return (
-    <div className="w-1/3 mx-auto">
+    <div className=" w-10/12 md:w-1/3 mx-auto">
       <h1 className="text-center text-2xl font-bold text-blue-500">
         Add a Review
       </h1>

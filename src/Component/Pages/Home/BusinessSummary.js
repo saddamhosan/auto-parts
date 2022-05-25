@@ -3,14 +3,21 @@ import { AiOutlineBranches } from "react-icons/ai";
 import { GiFlyingFlag } from "react-icons/gi";
 import { IoIosPeople } from "react-icons/io";
 import { VscFeedback } from "react-icons/vsc";
+import bg from '../../../images/bg-busness.jpg';
 
 const BusinessSummary = () => {
     return (
-      <div>
-        <h1 className="text-3xl text-center text-blue-500 font-bold">
+      <div className='relative mt-10 mb-20'>
+        <img
+          className="w-full h-[50vh] absolute -z-50 opacity-50"
+          src={bg}
+          alt=""
+        />
+        <h1 className="text-3xl text-center text-gray-600 font-bold pt-10">
+          
           Millions Business Trust Us
         </h1>
-        <p className="text-center text-xl text-blue-500 font-bold">
+        <p className="text-center text-xl  font-bold">
           Try to understand users expectation
         </p>
         <div className="flex justify-evenly text-center my-10">

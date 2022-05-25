@@ -46,7 +46,7 @@ const ManageProduct = () => {
   return (
     <div className="m-6">
       <h1 className="text-center text-3xl font-bold text-blue-500">Total product:{products.length}</h1>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-3 gap-4">
         {products.map((product) => (
           <div className="shadow-xl rounded-2xl">
             <div>

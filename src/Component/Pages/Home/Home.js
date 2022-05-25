@@ -3,6 +3,8 @@ import Banner from './Banner';
 import BusinessSummary from './BusinessSummary';
 import Parts from './Parts';
 import Review from './Review';
+import Services from './Services';
+import Subscribe from './Subscribe';
 
 const Home = () => {
     return (
@@ -10,7 +12,9 @@ const Home = () => {
             <Banner/>
             <Parts/>
             <Review/>
+            <Services/>
             <BusinessSummary/>
+            <Subscribe/>
         </div>
     );
 };

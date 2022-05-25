@@ -49,7 +49,7 @@ const AddProduct = () => {
         <h1 className="text-center text-3xl font-bold text-blue-500">
           Add A New product
         </h1>
-        <div className="card w-1/2 mx-auto shadow-2xl bg-base-100">
+        <div className="card w-10/12 md:w-1/2 mx-auto shadow-2xl bg-base-100">
           <div className="card-body">
             <form onSubmit={handleAddProduct}>
               <div className="form-control">
