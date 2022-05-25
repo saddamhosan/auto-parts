@@ -3,12 +3,12 @@ import { FaGooglePlus } from "react-icons/fa";
 import { ImLocation2 } from "react-icons/im";
 import { MdLocalPhone, MdMarkEmailRead } from "react-icons/md";
 import {
-    TiSocialFacebook,
-    TiSocialLinkedin,
-    TiSocialSkype,
-    TiSocialTwitter,
-    TiSocialVimeo,
-    TiSocialYoutube
+  TiSocialFacebook,
+  TiSocialLinkedin,
+  TiSocialSkype,
+  TiSocialTwitter,
+  TiSocialVimeo,
+  TiSocialYoutube
 } from "react-icons/ti";
 
 const Footer = () => {
@@ -22,7 +22,7 @@ const Footer = () => {
             Contact us
           </h1>
           <p className="text-2xl font-bold font-serif text-center mt-5">
-            E Warehouse
+          AutoParts
           </p>
           <p className="flex items-center space-x-2">
             <span>
