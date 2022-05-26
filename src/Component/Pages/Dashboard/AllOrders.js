@@ -44,7 +44,7 @@ const AllOrders = () => {
         <h1 className="text-3xl font-bold text-center text-blue-500">
           All Orders
         </h1>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto my-8">
           <table className="table w-full">
             <thead>
               <tr>
@@ -70,13 +70,15 @@ const AllOrders = () => {
                         Shipped
                       </p>
                     ) : (
-                      <button
-                        onClick={() => handleShippedOrder(order._id)}
-                        disabled={!order.paid}
-                        className="btn btn-xs bg-blue-600 border-0"
-                      >
-                        Payment Confirm
-                      </button>
+                      <div className='text-center'>
+                        <button
+                          onClick={() => handleShippedOrder(order._id)}
+                          disabled={!order.paid}
+                          className="btn btn-xs bg-blue-600 border-0"
+                        >
+                          {!order.paid ? "UnPaid" : "Pending"}
+                        </button>
+                      </div>
                     )}
                   </td>
                 </tr>

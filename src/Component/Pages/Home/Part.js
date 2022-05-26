@@ -13,7 +13,7 @@ const Part = ({part}) => {
           <p>{description}</p>
           <p>Minimum Order: {minOrder} pieces</p>
           <p>Available Quantity: {available} pieces</p>
-          <p>Price:{price}</p>
+          <p>Price:{price} per unite</p>
           <div className="flex justify-center my-4">
             <Link to={`purchase/${_id}`} className="btn btn-outline btn-primary">
               Purchase

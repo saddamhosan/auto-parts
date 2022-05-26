@@ -106,7 +106,7 @@ const Purchase = () => {
                 <p>{description}</p>
                 <p>Minimum Order: {minOrder} pieces</p>
                 <p>Available Quantity: {available} pieces</p>
-                <p>Price:{price}</p>
+                <p>Price:{price} per unite</p>
               </div>
             </div>
 
@@ -159,6 +159,7 @@ const Purchase = () => {
                     <input
                       type="number"
                       name="quantity"
+                      placeholder={`Minimum Order ${minOrder} Pieces`}
                       required
                       className="input input-bordered"
                       onChange={handleQuantity}

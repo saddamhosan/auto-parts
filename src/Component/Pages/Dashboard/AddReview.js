@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Helmet } from 'react-helmet-async';
+import { useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2";
 import auth from "../../../firebase.init";
 
 const AddReview = () => {
+  const navigate=useNavigate()
   const [user] = useAuthState(auth);
   console.log(user);
   const [rattingError, setRattingError] = useState("");
@@ -40,6 +42,7 @@ const AddReview = () => {
              showConfirmButton: false,
              timer: 1500,
            });
+           navigate('/')
            e.target.reset();
          }
        });
