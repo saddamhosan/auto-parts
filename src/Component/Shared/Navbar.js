@@ -117,7 +117,7 @@ const Navbar = () => {
                 >
                   Log Out
                   <span className="text-gray-500 font-serif font-bold">
-                    {user.displayName.split(" ")[0]}
+                    {user.displayName?.split(" ")[0]}
                   </span>
                 </span>
               ) : (
