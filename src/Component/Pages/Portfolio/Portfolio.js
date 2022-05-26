@@ -1,9 +1,13 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import me from '../../../images/myIMG.jpg';
 
 const Portfolio = () => {
     return (
       <div>
+        <Helmet>
+          <title>Portfolio - AutoParts</title>
+        </Helmet>
         <div class=" bg-base-200 min-h-[80vh]">
           <div class=" md:flex lg:flex-row-reverse">
             <div class="avatar md:w-1/2 flex justify-center items-center">
@@ -42,7 +46,8 @@ const Portfolio = () => {
                   <a
                     className="text-blue-500"
                     target={"_blank"}
-                    href="https://electronics-warehouse-970bd.web.app/" rel="noreferrer"
+                    href="https://electronics-warehouse-970bd.web.app/"
+                    rel="noreferrer"
                   >
                     Electronics Warehouse
                   </a>
@@ -50,7 +55,8 @@ const Portfolio = () => {
                   <a
                     className="text-blue-500"
                     target={"_blank"}
-                    href="https://tourist-guide-ae9d0.web.app/" rel="noreferrer"
+                    href="https://tourist-guide-ae9d0.web.app/"
+                    rel="noreferrer"
                   >
                     Tourist Guide
                   </a>

@@ -1,14 +1,18 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Blogs = () => {
     
     return (
       <div className="grid md:grid-cols-2 gap-6 m-6">
+        <Helmet>
+          <title>Blogs - AutoParts</title>
+        </Helmet>
         <div className="bg-slate-200 p-4 rounded-xl">
           <p className="text-xl font-bold ">
             Q: How will you improve the performance of a React Application?
           </p>
-          <p className="text-xl font-semibold">
+          <p className="text-xl">
             Ans:1. By Using Immutable Data Structures. <br />
             2. By Using Function/Stateless Components and React.PureComponent.{" "}
             <br />
@@ -23,7 +27,7 @@ const Blogs = () => {
             Q: What are the different ways to manage a state in a React
             application?
           </p>
-          <p className="text-xl font-semibold">
+          <p className="text-xl">
             Ans:There are four main types of state React apps. Those are Local
             state, Global state, Server state & URL state. Local State: By using
             useState,useReducer,useCallback can manage Local State Global State:
@@ -37,7 +41,7 @@ const Blogs = () => {
           <p className="text-xl font-bold">
             Q:How does prototypical inheritance work?
           </p>
-          <p className="text-xl font-semibold">
+          <p className="text-xl">
             Ans:The Prototypal Inheritance is a feature in javascript used to
             add methods and properties in objects. It is a method by which an
             object can inherit the properties and methods of another object.
@@ -49,7 +53,7 @@ const Blogs = () => {
           <p className="text-xl font-bold">
             Q:What is a unit test? Why should write unit tests?
           </p>
-          <p className="text-xl font-semibold">
+          <p className="text-xl ">
             Ans:Unit testing involves the testing of each unit or an individual
             component of the software application. It is the first level of
             functional testing. The aim behind unit testing is to validate unit
@@ -68,7 +72,7 @@ const Blogs = () => {
             description, etc. How will you implement a search to find products
             by name?
           </p>
-          <p className="text-xl font-semibold">
+          <p className="text-xl">
             Ans: Array.filter(pd=>pd.name.includes('value of name'))
           </p>
         </div>

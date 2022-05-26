@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -46,6 +47,9 @@ const AddProduct = () => {
     }
     return (
       <div>
+        <Helmet>
+          <title>Add New Product - AutoParts</title>
+        </Helmet>
         <h1 className="text-center text-3xl font-bold text-blue-500">
           Add A New product
         </h1>
@@ -56,14 +60,22 @@ const AddProduct = () => {
                 <label className="label">
                   <span className="label-text">Name</span>
                 </label>
-                <input type="text" name="name" className="input input-bordered" />
+                <input
+                  type="text"
+                  name="name"
+                  className="input input-bordered"
+                />
               </div>
 
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Image URL</span>
                 </label>
-                <input type="text" name="img" className="input input-bordered" />
+                <input
+                  type="text"
+                  name="img"
+                  className="input input-bordered"
+                />
               </div>
 
               <div className="form-control">

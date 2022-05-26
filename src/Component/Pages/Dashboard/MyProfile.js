@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { Helmet } from 'react-helmet-async';
 import Swal from "sweetalert2";
 import auth from "./../../../firebase.init";
 
@@ -62,6 +63,9 @@ const MyProfile = () => {
   const {education,location,phone,linkedIn}=profile
   return (
     <div className="font-serif lg:flex lg:flex-row-reverse justify-center items-center bg-slate-50 my-10">
+      <Helmet>
+        <title>My Profile - AutoParts</title>
+      </Helmet>
       <div className="lg:w-3/5 text-center">
         <h1 className="text-3xl font-bold">Name: {name}</h1>
         <p>Email: {email}</p>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Banner from './Banner';
 import BusinessSummary from './BusinessSummary';
 import Parts from './Parts';
@@ -8,14 +9,17 @@ import Subscribe from './Subscribe';
 
 const Home = () => {
     return (
-        <div>
-            <Banner/>
-            <Parts/>
-            <Review/>
-            <Services/>
-            <BusinessSummary/>
-            <Subscribe/>
-        </div>
+      <div>
+        <Helmet>
+          <title>Home - AutoParts</title>
+        </Helmet>
+        <Banner />
+        <Parts />
+        <Review />
+        <Services />
+        <BusinessSummary />
+        <Subscribe />
+      </div>
     );
 };
 

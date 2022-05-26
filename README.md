@@ -16,6 +16,7 @@
 - React-slick-slider
 - React-spinners
 - Sweet-Alert
+- Helmet
 
 # Use packages on this project server side
 

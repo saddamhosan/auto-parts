@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Helmet } from 'react-helmet-async';
 import { useQuery } from 'react-query';
 import { useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -91,6 +92,9 @@ const Purchase = () => {
     }
     return (
       <div>
+        <Helmet>
+          <title>Purchase - AutoParts</title>
+        </Helmet>
         <div className="hero min-h-screen bg-base-200">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <div className="shadow-xl rounded-2xl">

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { Helmet } from 'react-helmet-async';
 import Swal from "sweetalert2";
 import auth from "../../../firebase.init";
 
@@ -46,6 +47,9 @@ const AddReview = () => {
   };
   return (
     <div className=" w-10/12 md:w-1/3 mx-auto">
+      <Helmet>
+        <title>Add A Review - AutoParts</title>
+      </Helmet>
       <h1 className="text-center text-2xl font-bold text-blue-500">
         Add a Review
       </h1>
@@ -75,7 +79,11 @@ const AddReview = () => {
           <label className="label">
             <span className="label-text">Ratting</span>
           </label>
-          <input type="number" name="ratting" className="input input-bordered" />
+          <input
+            type="number"
+            name="ratting"
+            className="input input-bordered"
+          />
         </div>
         {rattingError && <p className="text-red-500">{rattingError}</p>}
 

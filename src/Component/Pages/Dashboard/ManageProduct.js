@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from 'react-helmet-async';
 import Swal from "sweetalert2";
 
 const ManageProduct = () => {
@@ -45,7 +46,12 @@ const ManageProduct = () => {
   
   return (
     <div className="m-6">
-      <h1 className="text-center text-3xl font-bold text-blue-500">Total product:{products.length}</h1>
+      <Helmet>
+        <title>Manage All Product - AutoParts</title>
+      </Helmet>
+      <h1 className="text-center text-3xl font-bold text-blue-500">
+        Total product:{products.length}
+      </h1>
       <div className="grid md:grid-cols-3 gap-4">
         {products.map((product) => (
           <div className="shadow-xl rounded-2xl">
@@ -59,7 +65,10 @@ const ManageProduct = () => {
               <p>Available Quantity: {product.available} pieces</p>
               <p>Price:{product.price}</p>
               <div className="flex justify-center">
-                <button onClick={()=>handleProductDelete(product._id)} className="btn btn-md bg-red-500 border-0 mt-4">
+                <button
+                  onClick={() => handleProductDelete(product._id)}
+                  className="btn btn-md bg-red-500 border-0 mt-4"
+                >
                   Delete
                 </button>
               </div>

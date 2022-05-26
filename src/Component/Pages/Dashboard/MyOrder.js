@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { Helmet } from 'react-helmet-async';
 import { useQuery } from "react-query";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading";
@@ -26,7 +27,12 @@ const MyOrder = () => {
   if (error) return "An error has occurred: " + error.message;
   return (
     <div>
-      <h1 className="text-2xl text-center text-blue-500 font-bold">My All Order :{orders?.length}</h1>
+      <Helmet>
+        <title>My Order - AutoParts</title>
+      </Helmet>
+      <h1 className="text-2xl text-center text-blue-500 font-bold">
+        My All Order :{orders?.length}
+      </h1>
 
       <div className="overflow-x-auto">
         <table className="table w-full">

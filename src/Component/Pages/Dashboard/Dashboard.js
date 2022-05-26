@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { Helmet } from 'react-helmet-async';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import auth from "../../../firebase.init";
@@ -10,6 +11,9 @@ const Dashboard = () => {
   const [admin] = useAdmin(user);
   return (
     <div>
+      <Helmet>
+        <title>Dashboard - AutoParts</title>
+      </Helmet>
       <div className="drawer drawer-mobile">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content ">

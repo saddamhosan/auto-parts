@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from 'react-helmet-async';
 import { useQuery } from "react-query";
 import Loading from "../../Shared/Loading";
 import User from "./User";
@@ -21,7 +22,12 @@ const MakeAdmin = () => {
   if (error) return "An error has occurred: " + error.message;
   return (
     <div>
-      <p className="text-center text-3xl text-blue-500 font-bold">Total user : {users.length}</p>
+      <Helmet>
+        <title>Make Admin - AutoParts</title>
+      </Helmet>
+      <p className="text-center text-3xl text-blue-500 font-bold">
+        Total user : {users.length}
+      </p>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>

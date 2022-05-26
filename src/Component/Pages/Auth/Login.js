@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
@@ -45,6 +46,9 @@ const Login = () => {
      };
     return (
       <div className="md:w-1/2 mx-auto shadow-xl p-10 my-10 rounded-xl font-serif">
+        <Helmet>
+          <title>Login - AutoParts</title>
+        </Helmet>
         <div>
           <h1 className="text-center text-2xl font-bold text-blue-500  ">
             Please Login

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
 
 const AllOrders = () => {
@@ -37,7 +38,12 @@ const AllOrders = () => {
     }
     return (
       <div>
-        <h1 className='text-3xl font-bold text-center text-blue-500'>All Orders</h1>
+        <Helmet>
+          <title>Manage All Order - AutoParts</title>
+        </Helmet>
+        <h1 className="text-3xl font-bold text-center text-blue-500">
+          All Orders
+        </h1>
         <div className="overflow-x-auto">
           <table className="table w-full">
             <thead>
@@ -59,13 +65,19 @@ const AllOrders = () => {
                   <td>{order.quantity}</td>
                   <td>{order.quantity * order.price}</td>
                   <td>
-                    {order.shipped ?<p className='text-xl font-bold text-center text-cyan-500'>Shipped</p>:<button
-                      onClick={()=>handleShippedOrder(order._id)}
-                      disabled={!order.paid}
-                      className="btn btn-xs bg-blue-600 border-0"
-                    >
-                      Payment Confirm
-                    </button>}
+                    {order.shipped ? (
+                      <p className="text-xl font-bold text-center text-cyan-500">
+                        Shipped
+                      </p>
+                    ) : (
+                      <button
+                        onClick={() => handleShippedOrder(order._id)}
+                        disabled={!order.paid}
+                        className="btn btn-xs bg-blue-600 border-0"
+                      >
+                        Payment Confirm
+                      </button>
+                    )}
                   </td>
                 </tr>
               ))}

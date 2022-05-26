@@ -1,6 +1,7 @@
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import Loading from '../../Shared/Loading';
@@ -27,6 +28,9 @@ const Payment = () => {
     const {userName,productName,quantity,price}=part
     return (
       <div className=" w-3/5 mx-auto">
+        <Helmet>
+          <title>Payment - AutoParts</title>
+        </Helmet>
         <div className="card bg-base-100 shadow-xl">
           <div className="card-body">
             <p className="font-bold text-blue-500">Hello,{userName}</p>
